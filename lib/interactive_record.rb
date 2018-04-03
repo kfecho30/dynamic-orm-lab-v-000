@@ -12,6 +12,11 @@ class InteractiveRecord
     self.class.table_name
   end
 
+  def col_names_for_insert
+    binding.pry
+    self.column_names
+  end
+
   def self.column_names
     sql = "PRAGMA table_info ('#{table_name}')"
     table_info = DB[:conn].execute(sql)
