@@ -14,7 +14,7 @@ class InteractiveRecord
 
   def col_names_for_insert
     binding.pry
-    self.column_names
+    self.class.column_names
   end
 
   def self.column_names
