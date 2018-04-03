@@ -24,6 +24,10 @@ class InteractiveRecord
     col_names.compact
   end
 
+  def self.column_names.each do |col|
+    attr_accessor col.to_sym
+  end
+
   def initialize(options={})
     options.each do |k, v|
       self.send("#{k}=", v)
