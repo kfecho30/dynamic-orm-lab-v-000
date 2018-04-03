@@ -24,8 +24,10 @@ class InteractiveRecord
     col_names.compact
   end
 
-  self.column_names.each do |col|
-    attr_accessor col.to_sym
+  def attr_accessor
+    self.column_names.each do |col|
+      attr_accessor col.to_sym
+    end
   end
 
   def initialize(options={})
